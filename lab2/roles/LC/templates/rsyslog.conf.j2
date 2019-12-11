@@ -13,9 +13,9 @@
 module(load="imuxsock") # provides support for local system logging
 #module(load="immark")  # provides --MARK-- message capability
 
-# provides UDP syslog reception
-#module(load="imudp")
-#input(type="imudp" port="514")
+ provides UDP syslog reception
+module(load="imudp")
+input(type="imudp" port="514")
 
  provides TCP syslog reception
 module(load="imtcp")

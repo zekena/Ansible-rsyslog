@@ -4,11 +4,16 @@
     dest: /etc/rsyslog.conf
   notify: restart rsyslog
 - name: install firewalld
-  apt:
+  yum:
     name: firewalld
     state: latest
-- name: allow port 514
+- name: allow port 514 tcp
   firewalld:
     port: 514/tcp
+    permanent: yes
+    state: enabled
+- name: allow port 514 UDP
+  firewalld:
+    port: 514/udp
     permanent: yes
     state: enabled

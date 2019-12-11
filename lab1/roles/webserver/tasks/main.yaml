@@ -1,5 +1,5 @@
 - name: install apache
-  apt:
+  yum:
     name: apache2
     state: latest
 

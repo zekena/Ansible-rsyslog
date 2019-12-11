@@ -1,5 +1,5 @@
 - name: install ntp
-  apt: 
+  yum: 
     name: ['ntp','ntpdate']
     state: latest
 - name: start ntp service
