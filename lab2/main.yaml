@@ -1,0 +1,6 @@
+---
+- name: Rsyslog relaying
+  hosts: infra01
+  become: yes
+  roles:
+    - relay

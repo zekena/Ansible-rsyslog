@@ -1,0 +1,6 @@
+---
+- name: NTP
+  hosts: infra 
+  become: yes
+  roles:
+    - ntp

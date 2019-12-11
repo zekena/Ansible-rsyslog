@@ -1,0 +1,14 @@
+- name: Open port 514 for relay
+  template:
+    src: templates/rsyslog.conf.j2
+    dest: /etc/rsyslog.conf
+  notify: restart rsyslog
+- name: install firewalld
+  apt:
+    name: firewalld
+    state: latest
+- name: allow port 514
+  firewalld:
+    port: 514/tcp
+    permanent: yes
+    state: enabled
